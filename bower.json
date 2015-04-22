@@ -1,0 +1,30 @@
+{
+  "name": "ag-data-grid",
+  "version": "0.0.0",
+  "authors": [
+    ""
+  ],
+  "description": "",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "data",
+    "grid"
+  ],
+  "main": "ag-data-grid.html",
+  "license": "MIT",
+  "homepage": "https://github.com/PolymerLabs/ag-data-grid/",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#v0.8.0-rc.6"
+  },
+  "devDependencies": {
+    "iron-doc-viewer": "PolymerElements/iron-doc-viewer#^0.8.6",
+    "web-component-tester": "*"
+  }
+}
