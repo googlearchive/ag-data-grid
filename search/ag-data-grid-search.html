@@ -1,0 +1,45 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<!--
+ag-data-grid-search renders a search area for the grid.
+The value of the search is provided to the ```dataSource's fetch``` function
+as a ```search { keyword: <string> }``` object.
+
+Usage:
+  ```
+  <ag-data-grid-search label="Search Contacts"></ag-data-grid-search>
+  ```
+@element ag-data-grid-search
+-->
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../../paper-input/paper-input.html">
+<polymer-element name="ag-data-grid-search" grid-search expects-grid-state attributes="label">
+  <template>
+    <link rel="stylesheet" href="ag-data-grid-search.css">
+    <paper-input committedValue="{{ value }}" id="search" label="{{ label }}"></paper-input>
+  </template>
+  <script>
+    /*
+     * Renders a search box inside the grid components
+     */
+    Polymer('ag-data-grid-search', {
+      /**
+       * Label text for search box.
+       * @attribute label
+       * @type string
+       */
+      label: '',
+      valueChanged: function() {
+        this.gridState.search.keyword = this.value;
+      }
+    });
+  </script>
+</polymer-element>
