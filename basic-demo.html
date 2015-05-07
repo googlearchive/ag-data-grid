@@ -1,0 +1,60 @@
+<!doctype html>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="../webcomponentsjs/webcomponents.js"></script>
+  <link rel="import" href="./basic.html">
+</head>
+<body>
+  <link rel="import" href="../polymer/polymer.html">
+  <link rel="import" href="ag-data-grid.html">
+
+  <polymer-element name="basic-demo">
+    <template>
+      <ag-data-grid summary="Displays each person's score"
+        pageSize=5
+        dataSource="{{dataSource}}">
+        <ag-data-grid-column label="Name">
+          <template>
+            {{item.name}}
+          </template>
+        </ag-data-grid-column>
+        <ag-data-grid-column label="Score">
+          <template>
+            {{item.score}}
+           </template>
+        </ag-data-grid-column>
+      </ag-data-grid>
+    </template>
+    <script type="text/javascript">
+      Polymer({
+        dataSource: {
+          fetch: function(search, sort, filters) {
+            return [
+              {name: 'John', score: 70},
+              {name: 'Jane', score: 54},
+              {name: 'Alex', score: 81},
+              {name: 'Hamed', score: 70},
+              {name: 'Milad', score: 88},
+              {name: 'Kaylee', score: 62},
+              {name: 'Maya', score: 92}
+            ];
+          }
+        }
+      });
+    </script>
+  </polymer-element>
+
+  <basic-demo></basic-demo>
+</body>
+</html>
